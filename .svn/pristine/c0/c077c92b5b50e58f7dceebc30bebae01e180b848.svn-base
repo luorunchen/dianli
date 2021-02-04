@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>解除报警</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <script src="js/jquery-3.3.1.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/layui-v2.4.5/layui/css/layui.css" />
+  <link rel="stylesheet" type="text/css" href="css/layui-v2.4.5/layui/css/layer.css" />
+  <style>
+    .elecDo {
+      height: 140px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="elecDo" style='text-align: center;'>
+    <h3>解除报警</h3>
+    <textarea id="txtDo" name="txtDo" class="form-control" placeholder="请输入值守中心处置情况"
+      style='height:100px;width:80%;    margin: 0 auto;'></textarea>
+    <div class="doButs">
+      <button class="btn btn-primary" type="button" id="dispose">提交处置情况</button>
+    </div>
+  </div>
+  <script src="css/layui-v2.4.5/layui/lay/modules/layer.js"></script>
+  <script>
+    var global = (function () {
+      var search = location.search;
+      var search = decodeURI(search);
+      var global = {};
+      if (search != "") {
+        search.slice(1).split("&").forEach(function (val) {
+          var arr = val.split("=");
+          global[arr[0]] = arr[1];
+        });
+      }
+      return global;
+    })();
+    $('#dispose').click(function () {
+      var username = localStorage.getItem('userName')
+      var cause = $('#txtDo').val()
+      if (global.aFid == "") {
+        alert('该设备没有报警，无需解除')
+      } else {
+        var user = username + ',' + global.aFid
+        if (cause == "") {
+          alert('请填写解除信息备注')
+        } else {
+          $.ajax({
+            type: 'get',
+            url: url + '/WebeditFileimageServlet',
+            data: 'username=' + user + '&cause=' + cause,
+            error: function (error) {
+              console.log('MDchart---->doAlarm' + error);
+            },
+            success: function (res) {
+              console.log(res)
+              var res = JSON.parse(res);
+              console.log(res);
+              if (res.list[0].status == true) {
+                console.log(1)
+                layer.open({
+                  content: res.list[0].err_msg
+                })
+                setTimeout(function () {
+                  location.reload();
+                  layer.close();
+                }, 1000)
+
+              } else {
+                layer.open({
+                  content: res.list[0].err_msg
+                })
+              }
+            }
+          })
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>

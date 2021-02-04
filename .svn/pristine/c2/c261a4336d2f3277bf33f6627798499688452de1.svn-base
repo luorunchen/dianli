@@ -1,0 +1,44 @@
+
+  .bodyLeft {
+    width: 23.5%;
+    height: 100%;
+    border: 1px solid #118153;
+    position: relative;
+    background: #062F2B;
+  }
+
+  .bodyRight {
+    width: 75%;
+    height: 100%;
+    border: 1px solid #118153;
+    position: relative;
+    background: #062F2B;
+    color: #fff;
+  }
+
+  .bodyRightTop {
+    width: 98%;
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+    line-height: 30px;
+    padding: 10px;
+    border-bottom: 2px solid #08382A;
+  }
+
+  .bodyRightTopInput {
+    height: 20px;
+    outline: none;
+    border: none;
+    background: #0F4037;
+    width: 90%;
+    color: #fff;
+    padding: 6px 12px;
+  }
+
+  .bodyRightAll {
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    flex-wrap: wrap;
+  }

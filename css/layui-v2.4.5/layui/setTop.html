@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/layui.css">
+</head>
+<body>
+	<div class="site-demo-button" id="layerDemo" style="margin-bottom: 0;">
+		<button data-method="setTop" class="layui-btn">多窗口模式，层叠置顶</button>
+	</div>
+	<script src="js/jquery.min.js"></script>
+<script src="layui.js"></script>
+<script>
+	var height=$(window).height();
+		var width=$(window).width();
+		console.log(height)
+		console.log(width)
+		var str=`<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-content">
+                    <form class="form-horizontal m-t" id="editForm" novalidate="novalidate">
+                        <div class="form-group col-sm-12">
+                            <label class="col-sm-3 control-label"><span class="c-red-text">*</span>角色：</label>
+                            <div class="col-sm-3">
+                                <input id="name" name="name" class="form-control" type="text">
+                            </div>
+                        </div>
+                        <div class="form-group col-sm-12">
+                            <label class="col-sm-3 control-label"><span class="c-red-text">*</span>模块选择：</label>
+                            <div class="col-sm-8">
+                                <dl class="permission-list">
+                                    <dt>
+                                        <label>&nbsp;配置模块</label>
+                                    </dt>
+                                    <dd>
+                                        <dl class="cl permission-list2">
+                                            <dt>
+                                                <label>
+                                                    <input type="checkbox" value="10001" name="subMenuIdList" id="userMan">&nbsp;
+                                                    用户管理
+                                                    <input type="hidden" id="menuAlias_10001" value="用户管理">
+                                                </label>
+                                            </dt>
+                                            <dd>
+                                                <label>
+                                                    <input type="checkbox" name="thirdMenuIdList" value="10001001" id="userLook">&nbsp;
+                                                    用户查看
+                                                    <input type="hidden" id="menuAlias_10001001" value="用户查看">
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox" name="thirdMenuIdList" value="10001002" id="userUpdate">&nbsp;
+                                                    用户修改
+                                                    <input type="hidden" id="menuAlias_10001002" value="用户修改">
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox" name="thirdMenuIdList" value="10001003" id="userAdd">&nbsp;
+                                                    用户新增
+                                                    <input type="hidden" id="menuAlias_10001003" value="用户新增">
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox" name="thirdMenuIdList" value="10001004" id="userDelete">&nbsp;
+                                                    用户删除
+                                                    <input type="hidden" id="menuAlias_10001004" value="用户删除">
+                                                </label>
+                                            </dd>
+                                        </dl>
+                                    </dd>
+                                    <dd>
+                                        <dl class="cl permission-list2">
+                                            <dt>
+                                                <label>
+                                                    <input type="checkbox" value="10002" name="subMenuIdList">&nbsp;
+                                                    权限管理
+                                                    <input type="hidden" id="menuAlias_10002" value="权限管理">
+                                                </label>
+                                            </dt>
+                                            <dd>
+                                                <label>
+                                                    <input type="checkbox" name="thirdMenuIdList" value="10002001">&nbsp;
+                                                    角色新增
+                                                    <input type="hidden" id="menuAlias_10002001" value="角色新增">
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox" name="thirdMenuIdList" value="10002002">&nbsp;
+                                                    角色删除
+                                                    <input type="hidden" id="menuAlias_10002002" value="角色删除">
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox" name="thirdMenuIdList" value="10002003">&nbsp;
+                                                    角色查看
+                                                    <input type="hidden" id="menuAlias_10002003" value="角色查看">
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox" name="thirdMenuIdList" value="10002004">&nbsp;
+                                                    角色修改
+                                                    <input type="hidden" id="menuAlias_10002004" value="角色修改">
+                                                </label>
+                                            </dd>
+                                        </dl>
+                                    </dd>
+                                    <dd>
+                                        <dl class="cl permission-list2">
+                                            <dt>
+                                                <label>
+                                                    <input type="checkbox" value="10003" name="subMenuIdList">&nbsp;
+                                                    设备管理
+                                                    <input type="hidden" id="menuAlias_10003" value="设备管理">
+                                                </label>
+                                            </dt>
+                                            <dd>
+                                                <label>
+                                                    <input type="checkbox" name="thirdMenuIdList" value="10003001">&nbsp;
+                                                    设备新增
+                                                    <input type="hidden" id="menuAlias_10003001" value="设备新增">
+                                                </label>
+                                            </dd>
+                                        </dl>
+                                    </dd>
+                                    <dd>
+                                        <dl class="cl permission-list2">
+                                            <dt>
+                                                <label>
+                                                    <input type="checkbox" value="10004" name="subMenuIdList">&nbsp;
+                                                    充值卡管理
+                                                    <input type="hidden" id="menuAlias_10004" value="充值卡管理">
+                                                </label>
+                                            </dt>
+                                            <dd>
+                                                <label>
+                                                    <input type="checkbox" name="thirdMenuIdList" value="10004001">&nbsp;
+                                                    充值卡管理
+                                                    <input type="hidden" id="menuAlias_10004001" value="列表查询">
+                                                </label>
+                                            </dd>
+                                        </dl>
+                                    </dd>
+                                    <dd>
+                                        <dl class="cl permission-list2">
+                                            <dt>
+                                                <label>
+                                                    <input type="checkbox" value="10005" name="subMenuIdList">&nbsp;
+                                                    订单管理
+                                                    <input type="hidden" id="menuAlias_10005" value="订单管理">
+                                                </label>
+                                            </dt>
+                                            <dd>
+                                                <label>
+                                                    <input type="checkbox" name="thirdMenuIdList" value="10005001">&nbsp;
+                                                    充值订单
+                                                    <input type="hidden" id="menuAlias_10005001" value="充值订单">
+                                                </label>
+                                            </dd>
+                                        </dl>
+                                    </dd>
+                                    <dd>
+                                        <dl class="cl permission-list2">
+                                            <dt>
+                                                <label>
+                                                    <input type="checkbox" value="10006" name="subMenuIdList">&nbsp;
+                                                    报表管理
+                                                    <input type="hidden" id="menuAlias_10006" value="报表管理">
+                                                </label>
+                                            </dt>
+                                            <dd>
+                                                <label>
+                                                    <input type="checkbox" name="thirdMenuIdList" value="10006001">&nbsp;
+                                                    日报
+                                                    <input type="hidden" id="menuAlias_10006001" value="日报">
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox" name="thirdMenuIdList" value="10006002">&nbsp;
+                                                    月报
+                                                    <input type="hidden" id="menuAlias_10006002" value="月报">
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox" name="thirdMenuIdList" value="10006003">&nbsp;
+                                                    设备日报
+                                                    <input type="hidden" id="menuAlias_10006003" value="近三个月报表查询">
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox" name="thirdMenuIdList" value="10006004">&nbsp;
+                                                    设备月报
+                                                    <input type="hidden" id="menuAlias_10006004" value="设备月报">
+                                                </label>
+                                            </dd>
+                                        </dl>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                        <div class="form-group ">
+                            <div class="col-sm-12 text-center footer-bur-fixed dibu-but-box">
+                                <a class="btn btn-success" type="button" id="save-btn">&nbsp;&nbsp;保存&nbsp;&nbsp;</a>
+                                <!-- <a class="btn btn-default " type="button" id="cancel-btn">&nbsp;&nbsp;取消&nbsp;&nbsp;</a> -->
+                            </div>
+                        </div>
+                        <input type="hidden" name="token" value="9b4bcc45-ef59-4400-9f92-17f007767b3d">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>`;
+	layui.use('layer', function(){ //独立版的layer无需执行这一句
+		 var $ = layui.jquery, layer = layui.layer;
+		 var active = {
+			setTop: function(){   
+				var that = this; 
+				//多窗口模式，层叠置顶
+				layer.open({
+					type: 1 //此处以iframe举例   
+					,title: '当你选择该窗体时，即会在最顶端'
+					,area: ['500px','500px']  //宽高
+					,shade: 0.5  //  遮罩
+					,maxmin: true    //最大最小化
+				  ,offset:  //为了演示，随机坐标
+						'rb'
+					,content: str
+					//,btn: ['继续弹出', '全部关闭'] //只是为了演示
+					,yes: function(){
+						$(that).click(); 
+					}
+					,btn2: function(){
+						layer.closeAll();
+					}
+					
+					,zIndex: layer.zIndex //重点1   // 层叠顺序
+					,success: function(layero){
+						console.log(layero);
+						layer.setTop(layero); //重点2
+					},
+					cancel: function(index, layero){ 
+						layer.close(index)
+					}    
+				});
+			}
+		 };
+		
+		$('#layui-layer1').css('width',width);
+		$('#layerDemo .layui-btn').on('click', function(){
+			var othis = $(this), method = othis.data('method');
+			console.log(othis[0])
+			console.log(method)
+			active[method]	 ? active[method].call(this, othis[0]) : '';
+		});
+	})
+
+</script>
+</body>
+</html>

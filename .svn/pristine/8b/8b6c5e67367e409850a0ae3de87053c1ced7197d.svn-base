@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>设备列表</title>
+  <script src="../js/jquery.js"></script>
+  <script src="../js/url_zhuan.js"></script>
+  <link rel="stylesheet" type="text/css" href="../css/layui-v2.4.5/layui/css/layui.css" />
+  <link rel="stylesheet" type="text/css" href="../css/layui-v2.4.5/layui/css/layer.css" />
+  <link rel="stylesheet" href="../css/facAdmin.css">
+  <link rel="stylesheet" href="../css/camera.css">
+  <style>
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+    }
+
+    body .yourclass .layui-layer-title {
+      background: #c00;
+      color: #fff;
+      border-radius: 20px;
+    }
+    .leftbody::-webkit-scrollbar {
+      /*滚动条整体样式*/
+      width: 10px;
+      /*高宽分别对应横竖滚动条的尺寸*/
+      height: 10px;
+      
+    }
+    .leftbody::-webkit-scrollbar-thumb {
+      /*滚动条里面小方块*/
+      border-radius: 5px;
+      -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+      background: #F7C1F7;
+    }
+  
+    .leftbody::-webkit-scrollbar-track {
+      /*滚动条里面轨道*/
+      -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+      border-radius: 0;
+      background: rgba(0, 0, 0, 0.1);
+    }
+  </style>
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      height: 100%;
+      width: 100%;
+      background: black;
+    }
+
+    .disabled {
+      cursor: not-allowed;
+    }
+
+    .iframe-btn-container {
+      display: inline-block;
+      width: 100%;
+      height: 32px;
+      text-align: left;
+      z-index: 1000;
+      position: absolute;
+      bottom: 0px;
+      left: 0;
+      color: #fff;
+      background: rgba(0, 0, 0, 0.65);
+      padding: 10px 0;
+      cursor: pointer;
+    }
+
+    .iframe-btn-container span {
+      display: inline-block;
+      margin-left: 20px;
+    }
+
+    .iframe-btn-container span:last-child {
+      position: absolute;
+      right: 10px;
+    }
+
+    .in {
+      opacity: 1;
+    }
+
+    .hide {
+      display: none !important;
+    }
+
+    .transparency {
+      opacity: 0;
+    }
+  </style>
+</head>
+
+<body style="    background-color: transparent;margin: 0px;">
+  <div class="detail_body">
+    <div class="detail_header">
+      <div style='width:30%;height:40px;'>
+        <div class="detail-head-div" style="width: 280px;">设备列表</div>
+      </div>
+      <div class="baselist bottomBody" >
+        <div  class="list">
+          <div style="height:calc(100% );overflow-y: scroll;margin-right: 10px;" class="leftbody">
+            <ul>
+              鹏胜智联科技有限公司 <li class="camera_list online" data-num='E32832533' data-yan="WTZAGR">
+                <a href="javascript:;">
+                  办公室-走廊 </a>
+              </li>
+              <li class="camera_list online" data-num='D76375435' data-yan="MTHHWY">
+                <a href="javascript:;" >
+                  办公室-前台 <i class="fa fa-play" style="margin-left: 10px"></i>
+                </a>
+              </li>
+              <li class="camera_list online">
+                <a href="javascript:;">
+                  办公室-财务室 </a>
+              </li>
+              <li class="camera_list online">
+                <a href="javascript:;">
+                  福泰五区人形监测 </a>
+              </li>
+              <li class="camera_list online">
+                <a href="javascript:;">
+                  福泰五区监控 </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div style='width:75%;' >
+          <div style="height:30px;line-height: 20px">
+            <span><i class="fa fa-video-camera" style="margin-right: 20px"></i>监控直播</span>
+          </div>
+          <div style='display:none;' id="shiBody">
+            <div id="playWind" >
+            </div>
+            <div id="optWind" style="width:640px;box-sizing: border-box;margin-top:10px;display:block">
+              <form class="layui-form" action="">
+                  <div class="layui-form-item">
+                      <label class="layui-form-label" style="width: 100px">回放时间</label>
+                      <div class="layui-input-inline" style="width: 350px">
+                          <input type="text" id="date" placeholder="请输入回放时间" autocomplete="off" class="layui-input" style="background:inherit;color: #fff;"  lay-key="1">
+                      </div>
+                      <div class="layui-input-inline" style="width: 100px">
+                          <a type="button" class="layui-btn layui-btn-normal" id="rec">回放</a>
+                      </div>
+                  </div>
+              </form>
+          </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+  <script src="../js/jquery.js"></script>
+  <script src="../js/ezuikit.js"></script>
+  <script src="../js/jsPlugin-1.2.0.js"></script>
+  <script src="../css/layui-v2.4.5/layui/lay/modules/layer.js"></script>
+  <script src="../css/layui-v2.4.5/layui/layui.js"></script>
+  <script src="../js/camera.js"></script>
+  <script>
+    var width = $(window).width();
+    var height = $(window).height();
+    console.log(height)
+    $('.baselist').css('width', (width * 0.92))
+    $('.baselist').css('height', (height -200))
+    
+  </script>
+</body>
+
+</html>

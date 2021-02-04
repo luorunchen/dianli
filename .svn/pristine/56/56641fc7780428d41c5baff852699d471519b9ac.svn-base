@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>报警信息</title>
+  <link rel="stylesheet" href="css/first.css">
+  <link rel="stylesheet" href="css/header.css">
+  <script src="http://api.map.baidu.com/api?v=3.0&ak=gQ5brR6pk0kIpWhZsGRhmU2T"></script>
+  <link rel="stylesheet" href="css/map.css">
+  <script type="text/javascript"
+    src="http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.js"></script>
+  <link rel="stylesheet" href="http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.css" />
+  <link rel="stylesheet" href="css/layui-v2.4.5/layui/css/layui.css">
+  <link rel="stylesheet" href="css/layui-v2.4.5/layui/css/layer.css">
+  <script src="js/jquery-3.3.1.js"></script>
+  <script src="js/jquery.ztree.core-3.5.js"></script>
+  <link href="css/MyTree.css" rel="stylesheet">
+  <link href="css/zTreeStyle.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/scrnAdaptive.css">
+  <link rel="stylesheet" href="css/waringMessage.css">
+  <script src="js/url.js"></script>
+  <style>
+    table tr td {
+      height: 25px;
+    }
+
+    .topTable {
+      overflow: auto;
+      height: 160px;
+    }
+
+    .outUl li {
+      height: 25px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="box">
+    <div class='header' style='color:#fff;    text-align: center;'>
+      <div class='headerTop'>
+        <div class='smallBox30'>
+          <span id='name'>屈显</span>
+          <span id='role' style='margin-left:20px;'>超级管理员</span>
+          <span id='time' style='margin-left:20px;'> 2020-09-01 周二 </span>
+        </div>
+        <div class='smallBox30'></div>
+        <div class='smallBox30 headerTopRight'>
+          <span>
+            <a href="monitoring.html" style='color:#fff;'>
+              <img src="./image/my.png" alt="">
+              监控后台
+            </a>
+          </span>
+          <span style='margin-left:30px;'>
+            <a href="personCenter.html" style='color:#fff;'>
+              <img src="./image/my.png" alt="">
+              个人中心
+            </a>
+
+          </span>
+          <span style='margin-left:30px;'>
+            <a href="login.html" style='color:#fff;'>
+              <img src="./image/exit.png" alt=""></i>
+              退出
+            </a>
+          </span>
+        </div>
+      </div>
+      <div class='headerBottom'>
+        <div class='smallBox50'>
+          <buttom class='bhBottom ' data-ad='0'>首页</buttom>
+          <buttom class='bhBottom' data-ad='1'>实时数据</buttom>
+          <buttom class='bhBottom ' data-ad='2'>报警信息</buttom>
+        </div>
+        <div class='smallBox30'></div>
+        <div class='smallBox40' style='    text-align: left;
+          padding-left: 170px;'>
+          <buttom class='bhBottom active' data-ad='3'>监控中心</buttom>
+          <buttom class='bhBottom' data-ad='4'>统计信息</buttom>
+        </div>
+
+      </div>
+      <div class='title'>
+        襄阳供电公司智慧消防系统平台
+      </div>
+    </div>
+    <div class='bodyCenter' style='justify-content: space-around;'>
+      <div class='bodyRight' style='overflow: hidden;width:100%;position: relative;border:none;'>
+        <div style='width:100%;height:100%;' id="mapbox"></div>
+        <div style='top:20px;left:25px;' class='serviceData'>
+          <div class='bctitle' style="    margin: 7px 0 0 7px;">2019年服务数据</div>
+          <span class="errorBtn" data-out='0'><i class='errorSpan'></i></span>
+          <div style='width:100%;height:250px;display: flex;'>
+            <div style='width:50%;height:250px;' id="alarmPie"></div>
+            <div style='width:40%;height:200px;'>
+              <div style='width:100%;height:50px;line-height:50px;'>
+                <span style='font-size:20px;'>现场服务</span>
+                <div style="display: inline-block;" id="serverTime">
+                  <span class='serveRight'></span>
+                  <span class='serveRight'></span>
+                  <span class='serveRight'></span>
+                  <span class='serveRight'></span>
+                </div>
+                <span style='font-size:20px;'>次</span>
+              </div>
+              <div style='width:90%;height:110px;    margin: 25px 10px 0 10px;' id="serverInfo">
+              </div>
+            </div>
+          </div>
+          <span class='trcorner'></span>
+          <span class='tlcorner'></span>
+          <span class='brcorner'></span>
+          <span class='blcorner'></span>
+        </div>
+        <div style='top:35%;left:25px;' class="alarmRecord">
+          <div class='bctitle' style="    margin: 7px 0 0 7px;">2019年报警记录</div>
+          <span class="errorBtn" data-out='1'><i class='errorSpan'></i></span>
+          <div style='width:90%;height:236px;margin:0 auto;' id="alarmPro">
+
+          </div>
+          <span class='trcorner'></span>
+          <span class='tlcorner'></span>
+          <span class='brcorner'></span>
+          <span class='blcorner'></span>
+        </div>
+        <div style='top:20px;right:25px;' class='panalarm'>
+          <div class='bctitle' style="  width:85%;  margin: 7px 0 0 7px;">当前报警设备<span class='alarmNum'>10个</span></div>
+          <span class="errorBtn" data-out='2'><i class='errorSpan'></i></span>
+          <div class=''>
+            <ul style='width: 90%;margin: 15px auto 0px;overflow: auto;' id="panalUl">
+              <!-- <li  style='border-bottom: 1px solid #1b5b46;padding-bottom: 10px;    margin-bottom: 10px;'>
+                <ul class='outUl'>
+                  <li>
+                    <span style='color:#2DBB8B'>设备名称:</span>  u创谷
+                  </li>
+                  <li>
+                    <span style='color:#2DBB8B'>单位名称:</span>  u创谷
+                  </li>
+                  <li>
+                    <span style='color:#2DBB8B'>报警类型:</span>  u创谷
+                  </li>
+                  <li>
+                    <span style='color:#2DBB8B'>设备编号:</span>  u创谷
+                  </li>
+                  <li>
+                    <span style='color:#2DBB8B'>报警事件:</span>  u创谷
+                  </li>
+                </ul>
+              </li> -->
+            </ul>
+            </table>
+
+          </div>
+          <div style='width:20px;height:20px;position: relative;margin: 0 auto;'>
+            <i style="background:url('./image/drop.png');width:20px;height:20px;position:absolute;     background-size: 100% 100%;"
+              id="alarmInfo" data-dir="drop"></i>
+          </div>
+          <span class='trcorner'></span>
+          <span class='tlcorner'></span>
+          <span class='brcorner'></span>
+          <span class='blcorner'></span>
+        </div>
+        <div style='bottom:20px;right:25px; ' class='legend'>
+          <div style="width:100%;height:53px;position: relative;">
+            <img src="./image/green_yuan.png" alt="" style="width: 15%;
+              position: absolute;
+              top: 10px;
+              left: 15px;">
+            <span class='imgSpan'>正常</span>
+          </div>
+          <div style="width:100%;height:53px;position: relative;">
+            <img src="./image/yellow_yuan.png" alt="" style="width: 15%;" class='imgPos'>
+            <span class='imgSpan'>次要报警</span>
+          </div>
+          <!-- <div style="width:100%;height:53px;position: relative;">
+            <img src="./image/bigData_07.png" alt="" style="width: 15%;
+              position: absolute;
+              top: 10px;
+              left: 15px;">
+            <span class='imgSpan'>重要报警</span>
+          </div> -->
+          <div style="width:100%;height:53px;position: relative;">
+            <img src="./image/red_yuan.png" alt="" style="width: 15%;
+              position: absolute;
+              top: 10px;
+              left: 15px;">
+            <span class='imgSpan'>严重报警</span>
+          </div>
+        </div>
+        <div
+          style='width:350px; height:100px;position: absolute;bottom:20px;right:40%; display:flex;justify-content: space-around; '>
+          <div style="width:30%;height:100px;">
+            <div class='centerRound' data-out='0'>
+              <i style="background:url('./image/bigData_1.png');width:35px;height:35px;position:absolute;    top: 22%;
+                left: 33%;"></i>
+              <span style="position:absolute;     top: 59%;
+                left: 24%;color:#1CD295">服务数据</span>
+            </div>
+          </div>
+          <div style='width:30%;height:100px;'>
+            <div class='centerRound' data-out='1'>
+              <i style="background:url('./image/bigData_2.png');width:35px;height:35px;position:absolute;    top: 22%;
+                left: 33%;"></i>
+              <span style="position:absolute;     top: 59%;
+                left: 24%;color:#1CD295">报警设备</span>
+            </div>
+          </div>
+          <div style='width:30%;height:100px;'>
+            <div class='centerRound' data-out='2'>
+              <i style="background:url('./image/bigData_3.png');width:35px;height:35px;position:absolute;    top: 22%;
+                left: 33%;"></i>
+              <span style="position:absolute;     top: 59%;
+                left: 24%;color:#1CD295">报警记录</span>
+            </div>
+          </div>
+        </div>
+        <!-- <span class='trcorner'></span>
+        <span class='tlcorner'></span>
+        <span class='brcorner'></span>
+        <span class='blcorner'></span> -->
+      </div>
+    </div>
+  </div>
+</body>
+<script src="js/echarts.js"></script>
+<script src="js/bigData.js"></script>
+<!-- <script src="js/bigTest.js"></script> -->
+<script>
+  $('.bhBottom').click(function () {
+    console.log($(this).attr('data-ad'))
+    var ad = $(this).attr('data-ad')
+    if (ad == '0') {
+      location.href = "index.html"
+    } else if (ad == '1') {
+      location.href = "real_time.html"
+    } else if (ad == '2') {
+      location.href = "waringMessage.html"
+    } else if (ad == '3') {
+      location.href = "bigData.html"
+    } else if (ad == '4') {
+      // location.href = "bigData.html"
+    } else {
+      location.href = ""
+    }
+  })
+</script>
+
+</html>

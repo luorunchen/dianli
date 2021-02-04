@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>upload模块快速使用</title>
+  <link rel="stylesheet" href="css/layui.css" media="all">
+</head>
+<body>
+ 
+<button type="button" class="layui-btn" id="test1">
+  <i class="layui-icon">&#xe67c;</i>上传图片
+</button>
+ 
+<script src="./layui.js"></script>
+<script>
+layui.use('upload', function(){
+  var upload = layui.upload;
+   
+  //执行实例
+	//http://106.53.31.173/twain/staffInput.action?name=12351&idCard=412341234545643&phone=15945212563&address=10&file=
+  var uploadInst = upload.render({
+    elem: '#test1' //绑定元素
+		,method:'post'
+		,data:{name:'123',idCard:'123',phone:'123',address:'123'}
+    ,url: 'http://106.53.31.173/twain/staffInput.action' //上传接口
+    ,done: function(res){
+      //上传完毕回调
+			console.log(res)
+    }
+    ,error: function(){
+      //请求异常回调
+    }
+  });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+.center_index {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  display: flex;
+  justify-content: start;
+  flex-wrap: wrap;
+}
+
+.divdemo {
+  width: 235px;
+  height: 98px;
+  margin: 20px 0 0 20px;
+  position: relative;
+  background-color: rgba(242, 242, 242, 1);
+}
+
+.demoText {
+  width: 113px;
+  height: 98px;
+  position: absolute;
+  line-height: 34px;
+  right: 0
+}

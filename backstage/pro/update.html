@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>项目新增</title>
+  <link rel="stylesheet" href="../../style/weui.css">
+    <link rel="stylesheet" href="../../style/jquery-weui.css">
+  <link rel="stylesheet" type="text/css" href="../../css/layui-v2.4.5/layui/css/layui.css" />
+  <link rel="stylesheet" type="text/css" href="../../css/layui-v2.4.5/layui/css/layer.css" />
+  <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="../../css/merch.css" />
+  <script src="../../js/url.js"></script>    
+  <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=vTZYBA0KBc1ebqpeEpftrWuVEo5RZXli"></script>
+  <style>
+    #allmap{
+      width:95%;
+      height:500px;
+    }
+    ul li{
+      height:30px;
+      line-height: 30px;
+      padding:0 20px;
+    }
+    ul li:hover{
+          color:#fff;
+          background-color:#3cf;
+      }
+  </style>
+</head>
+
+<body>
+  <div class="wrapper wrapper-content animated fadeInRight mb-50">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="ibox float-e-margins">
+          <div class="ibox-content">
+            <form class="form-horizontal m-t" id="editForm" novalidate="novalidate">
+              <input type="hidden" id="fileName" name="fileName">
+              <input type="hidden" id="httpPath" name="httpPath">
+              <input type="hidden" id="physicalPath" name="physicalPath">
+              <input type="hidden" id="fileSize" name="fileSize">
+              <div class="clearfix" >
+                <div class="form-group col-sm-6">
+                  <label class="col-sm-4 control-label"><span class="c-red-text">*</span>项目名称：</label>
+                  <div class="col-sm-8">
+                    <input id="name" name="name" class="form-control" type="text" autocomplete="off">
+                  </div>
+                </div>
+                <div class="form-group col-sm-6">
+                  <label class="col-sm-4 control-label"><span class="c-red-text">*</span>项目地址：</label>
+                  <input type="hidden" id="type" name="type" value="timeMode">
+                  <div class="col-sm-8">
+                    <input id="address" name="address" class="form-control" type="text" autocomplete="off">
+                    <span style="position: absolute;top: 0px;right: 15px;line-height: 34px;width: 45px;text-align: center;border:none;background:#3cf;color:#fff"
+                      id="r-result">查询</span>
+                  </div>
+                </div>
+                <div class="form-group col-sm-6" style='position: relative;'>
+                  <label class="col-sm-4 control-label"><span class="c-red-text">*</span>防火员：</label>
+                  <div class="col-sm-8" style='display: flex;justify-content: space-between;'>
+                    <input id="fireman" name="fireman" class="form-control" type="text" style="width:50%;display: inline-block" autocomplete="off" placeholder="请输入要查询的防火员" >
+                    <input type="button" class=" form-control newAllPeo" id="newFire"  style=" width:45%;display: inline-block;background: #3cf;color:#fff;padding:0"  data-val='0'
+                                value="新增防火员">
+                    <div style='width:89.2%;border:1px solid #ddd;height:auto;position:absolute;z-index:999;top:35px;background:#fff;display: none;' id="fireBox">
+                      <ul id="fireUl"> 
+                        
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group col-sm-6">
+                  <label class="col-sm-4 control-label"><span class="c-red-text">*</span>负责人：</label>
+                  <div class="col-sm-8">
+                    <input id="personliable" name="personliable" class="form-control" style="width:50%;display: inline-block" type="text" autocomplete="off" placeholder="请输入要查询的负责人" >
+                    <input type="button" class=" form-control newAllPeo" id="newPro" style=" width:45%;display: inline-block;background: #3cf;color:#fff;padding:0" data-val='1'
+                                value="新增负责人">
+                    <div style='width:89.2%;border:1px solid #ddd;height:auto;position:absolute;z-index:999;background:#fff;display: none;' id="personBox">
+                      <ul id="personUl">
+                        
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <!-- <div class="form-group col-sm-12">
+                  <label class="control-label col-sm-2 " for="mobile"><span class="c-red-text">*</span>区域选择：</label>
+                  <div class="col-xs-2">
+                      <select name="" id="box1" class="form-control ">
+                      </select>
+                  </div>
+                  <div class="col-xs-2">
+                      <select name="" id="box2" class="form-control " style='display:none;'>
+                      </select>
+                  </div>
+                  <div class="col-xs-2">
+                      <select name="" id="box3" class="form-control " style='display:none;'>
+                      </select>
+                  </div>
+                  <div class="col-xs-2">
+                      <select name="" id="box4" class="form-control " style='display:none;'>
+                      </select>
+                  </div>
+                  <div class="col-xs-2">
+                      <select name="" id="box5" class="form-control " style='display:none;'>
+                      </select>
+                  </div>
+                </div> -->
+                <div class="form-group col-sm-6">
+                  <label class="col-sm-4 control-label">描述</label>
+                  <div class="col-sm-8">
+                    <textarea name="" id="remark" cols="30" rows="5" class="form-control "></textarea>
+                  </div>
+                </div>
+                <div class="form-group col-sm-12" style='margin-left: 40px;'>
+                  <div id="allmap"></div>
+                </div>
+                <div class="form-group">
+                  <div class="col-sm-4 col-sm-offset-3 btn-pading-left">
+                    <button id="save-btn" class="btn btn-success" type="submit">&nbsp;&nbsp;保存&nbsp;&nbsp;</button>
+                    <button id="cancel-btn" class="btn btn-default" type="button">&nbsp;&nbsp;取消&nbsp;&nbsp;</button>
+                  </div>
+                </div>
+              </div>
+              <!-- <input type="hidden" name="token" value="b406ba80-aa04-432d-9910-67871aaa05bf"> -->
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="../../js/jquery-3.3.1.js"></script>
+  <script src="../../js/jquery-weui.js"></script>
+  <script src="../../css/layui-v2.4.5/layui/lay/modules/layer.js" ></script>
+  <script src="js/update.js"></script>
+  <script>
+    function putValueToInput(){
+          var telUserName= document.getElementById("fireman");
+          console.log(telUserName)
+          var perpage=telUserName.options[telUserName.selectedIndex].text;
+          var input=document.getElementById("input");
+          input.value=perpage;
+      }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../css/layui-v2.4.5/layui/css/layui.css" />
+  <link rel="stylesheet" type="text/css" href="../../css/layui-v2.4.5/layui/css/layer.css" />
+  <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="../../css/merch.css" />
+  <script src="../../js/url.js"></script>
+  <title>Document</title>
+</head>
+<body>
+  <form class="form-horizontal m-t" id="editForm" novalidate="novalidate">
+    <div class="clearfix" >
+      <div class="form-group col-sm-6">
+        <label class="col-sm-4 control-label"><span class="c-red-text">*</span>责任人名称：</label>
+        <div class="col-sm-8">
+          <input id="name" name="name" class="form-control" type="text" autocomplete="off">
+        </div>
+      </div>
+      <div class="form-group col-sm-6">
+        <label class="col-sm-4 control-label"><span class="c-red-text">*</span>责任人电话：</label>
+        <div class="col-sm-8">
+          <input id="phone" name="phone" class="form-control" type="text" autocomplete="off">
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-4 col-sm-offset-3 btn-pading-left">
+          <button id="save-btn" class="btn btn-success" type="submit">&nbsp;&nbsp;保存&nbsp;&nbsp;</button>
+          <button id="cancel-btn" class="btn btn-default" type="button">&nbsp;&nbsp;取消&nbsp;&nbsp;</button>
+        </div>
+      </div>
+    </div>
+  </form>
+  <script src="../../js/jquery-3.3.1.js"></script>
+  <script>
+    var username = '15679193873' 
+    var name=$('#name').val()
+    var phone=$('#phone').val()
+    $.ajax({
+      type:'get',
+      url:url+'addprojectlegalfireman',
+      data:'username='+username+'&name='+name+'&phone='+phone,
+      error:function(error){console.log(error)},
+      success:function(res){
+        console.log(res)
+      }
+    })
+  </script>
+</body>
+</html>

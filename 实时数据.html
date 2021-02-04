@@ -1,0 +1,244 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <title>实时数据</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <link href="resources/css/axure_rp_page.css" type="text/css" rel="stylesheet" />
+  <link href="data/styles.css" type="text/css" rel="stylesheet" />
+  <link href="files/实时数据/styles.css" type="text/css" rel="stylesheet" />
+  <script src="resources/scripts/jquery-3.2.1.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/layui-v2.4.5/layui/css/layui.css" />
+  <link rel="stylesheet" type="text/css" href="css/layui-v2.4.5/layui/css/layer.css" />
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/two.css">
+  <script src="js/jquery-3.3.1.js"></script>
+  <script src="js/jquery.ztree.core-3.5.js"></script>
+  <script src="js/MyToolBar.js"></script>
+  <link href="css/MyTree.css" rel="stylesheet">
+  <link href="css/zTreeStyle.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/details_all.css">
+  <link rel="stylesheet" href="css/new_facDetail.css">
+  <script src="js/echarts.js"></script>
+</head>
+
+<body>
+  <div id="base" class="">
+
+    <!-- Unnamed (图片 ) -->
+    <div id="u211" class="ax_default image">
+      <img id="u0_img" class="img " src="image/logo.png" />
+      <div id="u211_text" class="text " style="display:none; visibility: hidden">
+        <p></p>
+      </div>
+    </div>
+
+    <!-- Unnamed (菜单) -->
+    <div id="u1" class="ax_default" style='border:1px solid '>
+      <div id="u2" class="ax_default ">
+        <div style='border-right:1px solid ;' id="u3">
+          <div id="u3_text" class="text ">
+            <p><span>首页</span></p>
+          </div>
+        </div>
+        <div style='border:0px solid ;' id="u4" class='active'>
+          <div id="u4_text" class="text ">
+            <p><span>实时数据</span></p>
+          </div>
+        </div>
+        <div style='border-left:1px solid ;' id="u5">
+          <div id="u5_text" class="text ">
+            <p><span>报警信息</span></p>
+          </div>
+        </div>
+        <div style='border-right:1px solid ;border-left:1px solid ;' id="u6">
+          <div id="u6_text" class="text ">
+            <p><span>监控中心</span></p>
+          </div>
+        </div>
+        <div style='border:0px solid ;' id="u7">
+          <div id="u7_text" class="text ">
+            <p><span>统计信息</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Unnamed (动态面板) -->
+    <div id="u219" class="ax_default">
+      <div id="u219_state0" class="panel_state" data-label="State1">
+        <div id="u219_state0_content" class="panel_state_content" style='width:100%;height: 100%;'>
+          <div class='center_index' style='width:100%;height:100%;' id="PageDetail">
+            <!-- <div class='divdemo' data-ad='广东'>
+              <img id="u222_img" class="img " src="images/实时数据/u222.png">
+              <div class='demoText'>
+                <p><span>设备数：100台</span></p>
+                <p><span>报警：100台</span></p>
+                <p><span>在线：100台</span></p>
+              </div>
+            </div>
+            <div class='divdemo' data-ad='广西'>
+              <img id="u222_img" class="img " src="image/zhejiang.png">
+              <div class='demoText'>
+                <p><span>设备数：100台</span></p>
+                <p><span>报警：100台</span></p>
+                <p><span>在线：100台</span></p>
+              </div>
+            </div> -->
+          </div>
+          <div class='center_index' style='width:100%;height:100%;display: none;' id="FacDetail">
+            <div class="bodyBox allTop" style='    margin-top: 10px;width:100%;height:100%;'>
+              <div class='allLeft'>
+                <div style='width:100%;height:37%;position: relative;    background: #fff;'>
+                  <div class='header'>
+                    <span style='margin-left: 5%;'>终端信息</span>
+                    <i data-who='1'></i>
+                    <i data-who='2'></i>
+                    <i data-who='3'></i>
+                  </div>
+                  <div>
+                    <ul
+                      style='list-style: none;margin-top:20px;padding-left: 13px;height:140px;line-height: 25px;overflow: auto;    '
+                      id="topInfo">
+                      <li>设备ID:5945646616161</li>
+                      <li>设备名称:四楼手术室总电源</li>
+                      <li>安装位置:u创谷</li>
+                      <li>在线状态:离线</li>
+                      <li>安装时间:2019-12-18 15:00:55</li>
+                      <li>设备类型:探测器</li>
+                      <li>创建时间:2019-12-18 15:00:55</li>
+                    </ul>
+                  </div>
+                </div>
+                <div style='width:100%;height:63%;background: #fff;'>
+                  <div class='header'>
+                    <span style='margin-left: 5%;'>传感器数据</span>
+                  </div>
+                  <div>
+                    <ul class='ul_center' style='position: relative;' id='bottomInfo'>
+                      <li>
+                        <div style='width:80%;'>
+                          <p style='margin:10px 0 0 20px;'>温度</p>
+                          <p style='color:#aaa'><i
+                              style='background:url(./image/zhong.png);width:16px;height:16px;position: absolute;left:20px;'></i>
+                            <span style='margin-left: 40px;;'>2019-12-18 15:55:22</span></p>
+                        </div>
+                        <div style='width:19%;line-height: 60px;text-align: right  ;'>
+                          <span>6°C</span>
+                        </div>
+                      </li>
+                      <li>
+                        <div style='width:80%;'>
+                          <p style='margin:10px 0 0 20px;'>湿度</p>
+                          <p style='color:#aaa'><i
+                              style='background:url(./image/zhong.png);width:16px;height:16px;position: absolute;left:20px;'></i>
+                            <span style='margin-left: 40px;;'>2019-12-18 15:55:22</span></p>
+                        </div>
+                        <div style='width:19%;line-height: 60px;text-align: right  ;'>
+                          <span>6RH</span>
+                        </div>
+                      </li>
+                      <li>
+                        <div style='width:80%;'>
+                          <p style='margin:10px 0 0 20px;'>烟雾</p>
+                          <p style='color:#aaa'><i
+                              style='background:url(./image/zhong.png);width:16px;height:16px;position: absolute;left:20px;'></i>
+                            <span style='margin-left: 40px;;'>2019-12-18 15:55:22</span></p>
+                        </div>
+                        <div style='width:19%;line-height: 60px;text-align: right  ;'>
+                          <span>正常</span>
+                        </div>
+                      </li>
+                      <li>
+                        <div style='width:80%;'>
+                          <p style='margin:10px 0 0 20px;'>灭火器</p>
+                          <p style='color:#aaa'><i
+                              style='background:url(./image/zhong.png);width:16px;height:16px;position: absolute;left:20px;'></i>
+                            <span style='margin-left: 40px;;'>2019-12-18 15:55:22</span></p>
+                        </div>
+                        <div style='width:19%;line-height: 60px;text-align: right  ;'>
+                          <span>正常</span>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div style='width:68%;height:100%;display: flex;justify-content: space-around;flex-wrap: wrap;'>
+                <div id="topTu" class='tubiao' ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Unnamed (形状) -->
+    <div id="u226" class="ax_default icon">
+      <img id="u226_img" class="img " src="images/首页/u8.svg" />
+      <div id="u226_text" class="text " style="display:none; visibility: hidden">
+        <p></p>
+      </div>
+    </div>
+
+    <!-- Unnamed (形状) -->
+    <div id="u227" class="ax_default icon">
+      <img id="u227_img" class="img " src="images/首页/u9.svg" />
+      <div id="u227_text" class="text " style="display:none; visibility: hidden">
+        <p></p>
+      </div>
+    </div>
+
+    <!-- Unnamed (矩形) -->
+    <div id="u228" class="ax_default box_1" style='border:1px solid'>
+      <ul id="treeDemo" class="ztree" ></ul>
+    </div>
+
+    <!-- Unnamed (矩形) -->
+    <div id="u232" class="ax_default label">
+      <div id="u232_div" class=""></div>
+      <div id="u232_text" class="text " style="display:none; visibility: hidden">
+        <p></p>
+      </div>
+    </div>
+
+
+
+
+
+    <!-- Unnamed (矩形) -->
+    <div id="u251" class="ax_default label">
+      <div id="u251_div" class=""></div>
+      <div id="u251_text" class="text ">
+        <p><span><a href=''>首页 &gt;</a></span><span><a href=''>实时数据 </a></span></p>
+      </div>
+    </div>
+
+    <!-- Unnamed (组合) -->
+    <div id="u252" class="ax_default" data-left="1555" data-top="98" data-width="300" data-height="25">
+
+      <!-- Unnamed (文本框) -->
+      <div id="u253" class="ax_default text_field">
+        <div id="u253_div" class=""></div>
+        <input id="u253_input" type="text" value="设备名称/设备编号" class="u253_input" />
+      </div>
+
+      <!-- Unnamed (形状) -->
+      <div id="u254" class="ax_default icon">
+        <img id="u254_img" class="img " src="images/实时数据/u254.svg" />
+        <div id="u254_text" class="text " style="display:none; visibility: hidden">
+          <p></p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="css/layui-v2.4.5/layui/lay/modules/layer.js"></script>
+  <script src='js/details.js'></script>
+ 
+</body>
+
+</html>

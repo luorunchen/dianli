@@ -1,0 +1,31 @@
+.treeBox {
+    margin-bottom:0px;
+    position: relative;
+    /*font-size: 14px;
+    font-family: 'Microsoft Yahei',verdana;
+    line-height: 20px;
+    border: solid 1px #D6D6D6;
+    background-color: #fff;*/
+}
+.treeTitle {
+    /*border:none;
+    border-bottom:solid 1px #D6D6D6;
+    background:url(img/bg.png) repeat-x;*/
+    height:39px;
+    width:100%;
+    position:absolute;
+    top:0px;
+    left:0px;
+    right:0px;
+}
+
+.treeBody {
+    padding:0px;
+    overflow:auto;
+   position:absolute;
+    top:40px;
+    bottom:0px;
+    left:0px;
+    right:0px;
+    overflow:auto;
+}

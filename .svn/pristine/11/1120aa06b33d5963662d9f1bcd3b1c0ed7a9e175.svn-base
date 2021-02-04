@@ -1,0 +1,31 @@
+.center_index{
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  display: flex;
+  justify-content: start;
+  flex-wrap: wrap;
+}
+.Centertable{
+  width:385px;height: 195px;border:1px solid #797979;border-radius:10px;margin: 20px 0 0 20px;position: relative;background-color: rgb(255, 255, 255);
+}
+.CentertableTop{
+  height:50px;line-height: 50px;border-bottom:1px solid;position: relative;
+}
+.CenterTopImg{
+  width:30%;height:80px;line-height: 80px;
+}
+.CenterWen{
+  width:70%;height:80px;    line-height: 25px;
+                text-align: left;
+}
+.CenterBottom{
+  width:100%;height:60px;display: flex;justify-content: space-around;
+}
+.bottomInfo{
+  width:30%;border-right:1px solid;display: flex;
+}
+.bottomInfoDetail{
+  width:50%;    height: 64px;
+                  line-height: 20px;font-size:14px;text-align: left;
+}

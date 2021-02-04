@@ -1,0 +1,66 @@
+.header{
+  width:100%;
+  height:50px;
+  background:#A0D468;
+  line-height: 50px;
+  color:#fff;
+  font-size:16px;
+}
+.header :nth-child(2){
+  background:url(../image/qianbi.png);width:16px;height:16px;position: absolute;top: 17px;right: 60px;
+}
+.header :nth-child(3){
+  background:url(../image/lingdang.png);width:16px;height:16px;position: absolute;top: 17px;right: 40px;
+}
+.header :nth-child(4){
+  background:url(../image/henggang.png);width:16px;height:16px;position: absolute;top: 17px;right: 20px;
+}
+.ul_center{
+  list-style: none;
+  padding:0;
+  height:325px;
+  margin: 0;
+  overflow: auto;
+}
+.ul_center li {
+  height:60px;
+  display: flex;  
+  border-bottom: 1px solid #aaa;;
+}
+p{
+  margin:0;
+}
+.allTop{
+  display: flex;
+  justify-content: space-around;
+  background:#F2F4F6
+}
+.allLeft{
+  width:30%;
+  height:100%;
+  display: flex;
+  justify-content: start;
+  flex-wrap: wrap;
+  text-align: left;
+}
+.tubiao{
+  width:100%;height:100%;background: #fff;
+}
+.alarmTable .tabBox{
+  border:none;
+  font-size:14px;
+  width:100%;
+  table-layout:fixed;
+  border-collapse:collapse;
+  border-top:solid 1px #000;
+  border-left:solid 1px #000;
+}
+.alarmTable  td {
+border-right:solid 1px #000;
+border-bottom:solid 1px #000;
+  line-height:25px;
+  min-height:25px;
+  padding:5px;
+word-break:break-all;  
+  word-wrap:break-word;  
+}
