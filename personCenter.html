@@ -16,21 +16,30 @@
     <link href="css/zTreeStyle.css" rel="stylesheet">
     <link rel="stylesheet" href="css/scrnAdaptive.css">
     <link rel="stylesheet" href="css/personCenter.css">
-  
+
 
     <style>
-        .PerActive{
-            background:#0F4037;
-            color:#11D9A7
+        .PerActive {
+            background: #0F4037;
+            color: #11D9A7
         }
-        .perLi{
-            width:93%;height:auto;margin:20px auto 0;line-height: 30px;position: relative;
+
+        .perLi {
+            width: 93%;
+            height: auto;
+            margin: 20px auto 0;
+            line-height: 30px;
+            position: relative;
         }
     </style>
 </head>
 
 <body>
     <div id="box">
+        <div class='baojing'>
+
+        </div>
+        <audio src="./music/6709.mp3" id="auto"></audio>
         <div class='header' style='color:#fff;    text-align: center;'>
             <div class='headerTop'>
                 <div class='smallBox30'>
@@ -77,83 +86,83 @@
             </div>
         </div>
         <div class='bodyCenter' style='justify-content: space-around;'>
-            <div  class='bodyLeft' style='color:#fff;'>
+            <div class='bodyLeft' style='color:#fff;'>
                 <div class='bctitle'>个人中心</div>
                 <!-- background:#0F4037;  -->
-                <div style='width:93%;height:auto;margin:20px auto 0;line-height: 30px;'> 
-                   <ul class='perUl'>
-                       <li class='PerActive perLi' data-index='1'>
-                           <img src="./image/text_on.png" alt="" style='margin-left:15px;'>
-                           <!-- <i style='background:url(./image/text_on.png);width:16px;height:16px;position: absolute;'></i> -->
-                           <span> 基础信息</span>
-                           <img src="./image/rightTo.png" alt="" style='margin-left:15px;    position: absolute;
+                <div style='width:93%;height:auto;margin:20px auto 0;line-height: 30px;'>
+                    <ul class='perUl'>
+                        <li class='PerActive perLi' data-index='1'>
+                            <img src="./image/text_on.png" alt="" style='margin-left:15px;'>
+                            <!-- <i style='background:url(./image/text_on.png);width:16px;height:16px;position: absolute;'></i> -->
+                            <span> 基础信息</span>
+                            <img src="./image/rightTo.png" alt="" style='margin-left:15px;    position: absolute;
                            right: 8px;
-                           top: 6px;'>   
+                           top: 6px;'>
                         </li>
-                       <li class='perLi' data-index='2' >
-                        <img src="./image/suo.png" alt="" style='margin-left:15px;'>
-                           更改密码
-                           <img src="./image/rightTo.png" alt="" style='margin-left:15px;    position: absolute;
+                        <li class='perLi' data-index='2'>
+                            <img src="./image/suo.png" alt="" style='margin-left:15px;'>
+                            更改密码
+                            <img src="./image/rightTo.png" alt="" style='margin-left:15px;    position: absolute;
                            right: 8px;
-                           top: 6px;'> 
+                           top: 6px;'>
                         </li>
-                   </ul>
+                    </ul>
                 </div>
                 <span class='trcorner'></span>
                 <span class='tlcorner'></span>
                 <span class='brcorner'></span>
                 <span class='blcorner'></span>
             </div>
-            <div  class='bodyRight' style='overflow: hidden;'>
+            <div class='bodyRight' style='overflow: hidden;'>
                 <div id="top1">
                     <div class='bodyRightTop'>
                         <!-- //id='regin' -->
-                        <div >
-                            个人中心  >  基础信息
+                        <div>
+                            个人中心 > 基础信息
                         </div>
                     </div>
                     <div class='bodyRightAll' style='overflow: auto;    height: auto;'>
-                        <table  style='margin: 50px 0 0 40px;border-collapse: inherit;width:25%;'>
+                        <table style='margin: 50px 0 0 40px;border-collapse: inherit;width:25%;'>
                             <tbody>
                                 <tr>
                                     <td style='width:30%;'>
-                                        <span >单位档案:</span>
+                                        <span>单位档案:</span>
                                     </td>
                                     <td>深圳同创科技实业有限公司</td>
                                 </tr>
                                 <tr>
                                     <td style='width:30%;'>
-                                        <span >负责人:</span>
+                                        <span>负责人:</span>
                                     </td>
                                     <td>电力</td>
                                 </tr>
                                 <tr>
                                     <td style='width:30%;'>
-                                        <span >单位地址:</span>
+                                        <span>单位地址:</span>
                                     </td>
                                     <td>深圳市龙岗区真多利物业</td>
                                 </tr>
                                 <tr>
                                     <td style='width:30%;'>
-                                        <span >联系电话:</span>
+                                        <span>联系电话:</span>
                                     </td>
                                     <td>15625416589</td>
                                 </tr>
                                 <tr>
                                     <td style='width:30%;'>
-                                        <span >联系邮箱:</span>
+                                        <span>联系邮箱:</span>
                                     </td>
                                     <td>4654613134@qq.com</td>
                                 </tr>
                                 <tr>
                                     <td style='width:30%;'>
-                                        <span >接入单位:</span>
+                                        <span>接入单位:</span>
                                     </td>
                                     <td>121个</td>
                                 </tr>
                                 <tr>
                                     <td style='width:30%;'>
-                                        <span >接入设备:</span>
+                                        <span>接入设备:</span>
                                     </td>
                                     <td>260个</td>
                                 </tr>
@@ -164,16 +173,16 @@
                 <div id="top2" style='display: none;'>
                     <div class='bodyRightTop'>
                         <!-- //id='regin' -->
-                        <div >
-                            个人中心  >  修改密码
+                        <div>
+                            个人中心 > 修改密码
                         </div>
                     </div>
                     <div class='bodyRightAll' style='overflow: auto;    height: auto;'>
-                        <table  style='margin: 50px 0 0 40px;border-collapse: inherit;width:25%;'>
+                        <table style='margin: 50px 0 0 40px;border-collapse: inherit;width:25%;'>
                             <tbody>
                                 <tr style='height:50px;'>
                                     <td style='width:30%;'>
-                                        <span >旧密码:</span>
+                                        <span>旧密码:</span>
                                     </td>
                                     <td>
                                         <input type="text" class="bodyLeftInput" placeholder="请输入旧密码">
@@ -181,7 +190,7 @@
                                 </tr>
                                 <tr style='height:50px;'>
                                     <td style='width:30%;'>
-                                        <span >新密码:</span>
+                                        <span>新密码:</span>
                                     </td>
                                     <td>
                                         <input type="text" class="bodyLeftInput" placeholder="请输入新密码">
@@ -189,7 +198,7 @@
                                 </tr>
                                 <tr style='height:50px;'>
                                     <td style='width:30%;'>
-                                        <span >确认新密码:</span>
+                                        <span>确认新密码:</span>
                                     </td>
                                     <td>
                                         <input type="text" class="bodyLeftInput" placeholder="请确定输入的新密码">
@@ -219,23 +228,99 @@
     <script src="js/personCenter.js"></script>
     <script>
         $('.bhBottom').click(function () {
-          console.log($(this).attr('data-ad'))
-          var ad = $(this).attr('data-ad')
-          if (ad == '0') {
-            location.href = "index.html"
-          } else if (ad == '1') {
-            location.href = "real_time.html"
-          } else if (ad == '2') {
-            location.href = "waringMessage.html"
-          } else if (ad == '3') {
-            location.href = "bigData.html"
-          } else if (ad == '4') {
-            // location.href = "bigData.html"
-          } else {
-            location.href = ""
-          }
+            console.log($(this).attr('data-ad'))
+            var ad = $(this).attr('data-ad')
+            if (ad == '0') {
+                location.href = "index.html"
+            } else if (ad == '1') {
+                location.href = "real_time.html"
+            } else if (ad == '2') {
+                location.href = "waringMessage.html"
+            } else if (ad == '3') {
+                location.href = "bigData.html"
+            } else if (ad == '4') {
+                // location.href = "bigData.html"
+            } else {
+                location.href = ""
+            }
         })
-      </script>
+    </script>
+    <script type="text/javascript">
+        var audio = $("#auto")[0];
+
+        var playAlarm = function () {
+            playNum = 3;
+            audio.play();
+        };
+
+        audio.addEventListener("ended", function () {
+            if (playNum > 0) {
+                playNum--;
+                audio.play();
+            }
+        }, false);
+        // playAlarm()
+        var goEasy = GoEasy.getInstance({
+            host: 'hangzhou.goeasy.io', //应用所在的区域地址: 【hangzhou.goeasy.io |singapore.goeasy.io】
+            appkey: "BC-693f25464a694a14a5e0adbccb96051d" //替换为您的应用appkey
+        });
+
+
+        goEasy.connect({
+            onSuccess: function () {  //连接成功
+                console.log("GoEasy connect successfully.") //连接成功
+            },
+            onFailed: function (error) { //连接失败
+                console.log("Failed to connect GoEasy, code:" + error.code + ",error:" + error.content);
+            },
+            onProgress: function (attempts) { //连接或自动重连中
+                console.log("GoEasy is connecting", attempts);
+            }
+        });
+        var userName = parseInt(localStorage.getItem('userName'));
+
+        goEasy.subscribe({
+            channel: userName.toString(),//替换为您自己的channel
+            onMessage: function (message) {
+                playAlarm()
+                console.log(message, '我是message')
+                const res = message.content
+                const arr = res.split(',');
+
+                $('.baojing').css('display', 'block')
+                // $('.baojing').css('transition', 'all 1s;')
+                html =
+                    `
+                                    <img src="./image/ygalarm.png" alt="" style="float: left;padding: 10px 0 0 10px;" width="90px" height="90px">
+                                    <div style="padding-left: 98px;">
+                                    <p style="float: right;margin-right: 30px;font-size: 20px;cursor: pointer;" id="outBaojing">X</p>
+                                    <p style="font-weight: 900;">报警类型:${arr[4]}</p>
+                                    <p>设备号:${arr[0]}</p>
+                                    <p>设备ID:${arr[1]}</p>
+                                    <p>设备地址:${arr[2]}</p>
+                                    <p>项目名称:${arr[3]}</p>			
+                        `
+                $('.baojing').html(html)
+                console.log("Channel:" + message.channel + " content:" + message.content);
+
+            },
+            onSuccess: function (message) {
+                console.log(message)
+                console.log("Channel订阅成功。");
+            },
+            onFailed: function (error) {
+                console.log("Channel订阅失败, 错误编码：" + error.code + " 错误信息：" + error.content)
+            }
+        });
+
+        $('#outBaojing').click(() => {
+            $('.baojing').css('display', 'none')
+        })
+
+
+
+
+    </script>
 </body>
 
 </html>

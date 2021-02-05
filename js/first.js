@@ -160,7 +160,7 @@ $(function () {
           </div>
           <div class="form-group">
               <label for="exampleInputPassword1">内容:</label>
-              <input type="text" style="color:#fff" class="form-control" id="exampleInputPassword2">
+              <textarea  type="text" rows='5'bottomZhe style="color:#fff" class="form-control" id="exampleInputPassword2"></textarea>
           </div>
               <form action='' method='post' enctype="multipart/form-data" id='form1'>
             

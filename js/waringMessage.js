@@ -4,6 +4,33 @@ $(function () {
   sessionStorage.removeItem('four')
   sessionStorage.removeItem('one')
   sessionStorage.removeItem('five')
+
+
+
+  function todayTime() {
+    var date = new Date();
+    var curYear = date.getFullYear();
+    var curMonth = date.getMonth() + 1;
+    var curDate = date.getDate();
+    if (curMonth < 10) {
+      curMonth = '0' + curMonth;
+    }
+    if (curDate < 10) {
+      curDate = '0' + curDate;
+    }
+    var curHours = date.getHours();
+    var curMinutes = date.getMinutes();
+    var curtime = curYear + ' 年 ' + curMonth + ' 月 ' + curDate + ' 日'
+    console.log(curtime, 6654123211)
+    $('#time').html(curtime)
+  }
+
+
+  todayTime()
+
+
+
+
   function selectPage(code, name) {
     var one = sessionStorage.getItem('one')
     var two = sessionStorage.getItem('two')
