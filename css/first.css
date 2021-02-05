@@ -13,6 +13,7 @@ table thead tr {
   
 }
 .baojing{
+  top: 50%;
   font-size: 18px;
   overflow: hidden;
   color: #fff;
@@ -22,15 +23,14 @@ table thead tr {
   position: absolute;
   left: 50%;
   z-index: 999999;
-  animation:spread 3s linear forwards;
-  display: none;
-  transform: translateX(-50%);
-  -webkit-animation:spread 2s linear forwards;
-  -webkit-transform: translateX(-50%);
-  -moz-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  -o-transform: translateX(-50%);
-  
+  animation:spread 1s linear forwards;
+  display: block;
+  transform: translate(-50%,-50%);
+  -webkit-animation:spread 1s linear forwards;
+  -webkit-transform: translate(-50%,-50%);
+  -moz-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  -o-transform: translate(-50%,-50%);
 }
 @keyframes spread{
   0%   {height: 10px;}
