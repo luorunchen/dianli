@@ -1,6 +1,0 @@
-.CenterInfo{
-  display: flex;flex-wrap: wrap;justify-content: space-around;
-}
-.detailInfo{
-  width:95%;height:163px;border:1px solid #717171;display: flex;justify-content: space-around;margin-top: 10px;
-}

@@ -24,7 +24,7 @@ table thead tr {
   left: 50%;
   z-index: 999999;
   animation:spread 1s linear forwards;
-  display: block;
+  display: none;
   transform: translate(-50%,-50%);
   -webkit-animation:spread 1s linear forwards;
   -webkit-transform: translate(-50%,-50%);
