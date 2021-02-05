@@ -543,6 +543,11 @@ line-height: 40px;
                 `
             $('.baojing').html(html)
             console.log("Channel:" + message.channel + " content:" + message.content);
+            $('#outBaojing').click(() => {
+                $('.baojing').css('display', 'none')
+            })
+
+
 
         },
         onSuccess: function (message) {
@@ -553,11 +558,6 @@ line-height: 40px;
             console.log("Channel订阅失败, 错误编码：" + error.code + " 错误信息：" + error.content)
         }
     });
-
-    $('#outBaojing').click(() => {
-        $('.baojing').css('display', 'none')
-    })
-
 
 
 

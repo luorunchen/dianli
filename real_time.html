@@ -730,6 +730,9 @@
                         `
                 $('.baojing').html(html)
                 console.log("Channel:" + message.channel + " content:" + message.content);
+                $('#outBaojing').click(() => {
+                    $('.baojing').css('display', 'none')
+                })
 
             },
             onSuccess: function (message) {
@@ -741,9 +744,6 @@
             }
         });
 
-        $('#outBaojing').click(() => {
-            $('.baojing').css('display', 'none')
-        })
 
 
 

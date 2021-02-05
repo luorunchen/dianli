@@ -561,7 +561,10 @@
 				`
 				$('.baojing').html(html)
 				console.log("Channel:" + message.channel + " content:" + message.content);
-
+				$('#outBaojing').click(() => {
+					console.log(133123)
+					$('.baojing').css('display', 'none')
+				})
 			},
 			onSuccess: function (message) {
 				console.log(message)
@@ -572,9 +575,7 @@
 			}
 		});
 
-		$('#outBaojing').click(() => {
-			$('.baojing').css('display', 'none')
-		})
+
 
 
 
