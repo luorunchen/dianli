@@ -193,11 +193,11 @@ $(function () {
             </div>
             <div style='width:69%;height:680px;display: flex;align-content: space-between;flex-wrap: wrap;'>
                 <div style='width:100%;height:49.5%;border:1px solid #159C61;'>
-                  <div class='bctitle' style='    margin: 7px 0 0 7px;'>温度趋势变化图</div>
+                  <div class='bctitle' style='    margin: 7px 0 0 7px;'>湿度趋势变化图</div>
                     <div id="senseTuTop" style='width:100%;height:90%'></div>
                 </div>
                 <div style='width:100%;height:49.5%;border:1px solid #159C61;'>
-                <div class='bctitle' style='    margin: 7px 0 0 7px;'>湿度趋势变化图</div>
+                <div class='bctitle' style='    margin: 7px 0 0 7px;'>温度趋势变化图</div>
                     <div id="senseTuBottom" style='width:100%;height:90%'></div>
                 </div>
             </div>

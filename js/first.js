@@ -401,11 +401,12 @@ $(function () {
               </div>
               <div style='width:69%;height:680px;display: flex;align-content: space-between;flex-wrap: wrap;'>
                   <div style='width:100%;height:49.5%;border:1px solid #159C61;'>
-                    <div class='bctitle' style='    margin: 7px 0 0 7px;'>温度趋势变化图</div>
+                    <div class='bctitle' style='    margin: 7px 0 0 7px;'>湿度趋势变化图</div>
                       <div id="senseTuTop" style='width:100%;height:90%'></div>
                   </div>
                   <div style='width:100%;height:49.5%;border:1px solid #159C61;'>
-                  <div class='bctitle' style='    margin: 7px 0 0 7px;'>湿度趋势变化图</div>
+                  <div class='bctitle' style='    margin: 7px 0 0 7px;'>
+                  温度趋势变化图</div>
                       <div id="senseTuBottom" style='width:100%;height:90%'></div>
                   </div>
               </div>
@@ -848,13 +849,13 @@ $(function () {
 
       $.each(res, function (i, v) {
         // v[1].alarmTime = '2021-01-15 09:19:47.0'
-        time.push(v.alarmTime)
-        data.push(v.value)
+        time.push(v.days)
+        data.push(v.count)
       })
-      console.log(time, 789789)
-      time[1] = "2021-01-15 09:19:47.0"
-      data[0] = '1'
-      data[1] = '0'
+      // console.log(time, 789789)
+      // time[1] = "2021-01-15 09:19:47.0"
+      // data[0] = '1'
+      // data[1] = '0'
       var dom = document.getElementById("bottomZhe");
       var myChart = echarts.init(dom);
       var app = {};
