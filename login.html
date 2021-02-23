@@ -20,10 +20,12 @@
       <div class="m-login-warp">
         <form class="layui-form">
           <div class="layui-form-item">
-            <input type="text" name="username" required lay-verify="required" placeholder="用户名" autocomplete="off" class="layui-input" id="username">
+            <input type="text" name="username" required lay-verify="required" placeholder="用户名" autocomplete="off"
+              class="layui-input" id="username">
           </div>
           <div class="layui-form-item">
-            <input type="password" name="password" required lay-verify="required" placeholder="密码" autocomplete="off" class="layui-input" id="pass">
+            <input type="password" name="password" required lay-verify="required" placeholder="密码" autocomplete="off"
+              class="layui-input" id="pass">
           </div>
           <div class="layui-form-item m-login-btn">
             <div class="layui-inline">
@@ -38,24 +40,25 @@
     </div>
   </div>
   <script src="js/jquery-3.3.1.js"></script>
-  <script >
-    $('#denglu-btn').click(function(e){
+  <script>
+    $('#denglu-btn').click(function (e) {
       e.preventDefault();
-      var username=$('#username').val();
-      var pass=$('#pass').val();
+      var username = $('#username').val();
+      var pass = $('#pass').val();
       $.ajax({
-        type:'post',
-        url:url+'login',
-        data:'username='+username+'&password='+pass,
-        error:function(error){console.log(error)},
-        success:function(result){
+        type: 'post',
+        url: url + 'login',
+        data: 'username=' + username + '&password=' + pass,
+        error: function (error) { console.log(error) },
+        success: function (result) {
           console.log(result);
-          if(result.list[0].status==true){
-            var role=result.user_info.role  //权限
-            location.href="index.html"
-            localStorage.setItem('role',role)
-            localStorage.setItem('username',username)
-          }else{
+          if (result.list[0].status == true) {
+            var role = result.user_info.role  //权限
+            location.href = "index.html"
+            localStorage.setItem('role', role)
+            localStorage.setItem('username', username)
+            localStorage.setItem('userName', username)
+          } else {
             alert(result.list[0].mess)
           }
           // var role=result.user_info.role  //权限
